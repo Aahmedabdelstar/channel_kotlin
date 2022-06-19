@@ -15,4 +15,18 @@ class PlatformRepository {
     }
     return color;
   }
+
+   printText(String title) async {
+     print('RESULT2222 -> $title');
+    try {
+       await platform.invokeMethod("printText", {
+        "text": title,
+      });
+
+    } on PlatformException catch (e) {
+      print(e);
+    }
+
+  }
+
 }

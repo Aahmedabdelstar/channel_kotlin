@@ -47,6 +47,10 @@ class _HomePageState extends State<HomePage> {
     return colorResult;
   }
 
+  printText(String title) async {
+    await _repository.printText(title);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,6 +114,32 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+
+
+
+            RaisedButton(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+
+                  Text(
+                    "printText",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+              color: Colors.green,
+              onPressed: () {
+                setState(() {
+                  printText("Test Ahmed");
+                });
+              },
+            ),
+
+
           ],
         ),
       ),
